@@ -1,0 +1,52 @@
+{
+    "name" : "borgogelli/nas-utils",
+    "type" : "console scripts",
+    "description" : "nas-utils",
+    "homepage" : "https://www.iubar.it",
+    "license" : "MIT",
+    "authors" : [{
+        "name" : "Andrea Borgogelli Avveduti",
+        "email" : "borgogelli@iubar.it"
+      }
+    ],
+    "config" : {
+      "secure-http" : false
+    },
+    "repositories" : [{
+        "url" : "https://gitlab.iubar.it/core/php-iubar-db.git",
+        "type" : "git"
+      }, {
+        "url" : "https://github.com/iubar/iubar-php-common.git",
+        "type" : "git"
+      }
+    ],
+    "require" : {
+      "php" : ">=7.0.0",
+      "ext-mbstring": "*",
+      "ext-fileinfo": "*",
+       "mikield/php-ref" : "1.0.0",
+      "jdorn/sql-formatter" : "dev-master@dev",
+      "iubar/php-iubar-db" : "dev-master@dev",
+      "iubar/iubar-php-common" : "dev-master@dev",
+      "symfony/finder" : "*"
+    },
+      "require-dev" : {
+          "consolidation/robo" : "*",
+          "phpstan/phpstan" : "*",
+        "overtrue/phplint": "^1.1"
+      },  
+    "autoload" : {
+      "psr-4" : {
+        "Borgogelli\\" : "src/Borgogelli/"
+      }
+    },
+    "scripts": {
+		"lint1": "./vendor/bin/phplint . --exclude=vendor",
+		"lint2": "./vendor/bin/parallel-lint --exclude vendor .",
+		"phpstan": "./vendor/bin/phpstan analyse src tests",
+		"phpstan-ci": "./vendor/bin/phpstan analyse src tests --no-interaction --no-progress",
+		"test": ".\\vendor\\bin\\phpunit"
+    }
+
+
+  }
