@@ -1,6 +1,6 @@
 {
     "name" : "borgogelli/nas-utils",
-    "type" : "console scripts",
+    "type" : "console-scripts",
     "description" : "nas-utils",
     "homepage" : "https://www.iubar.it",
     "license" : "MIT",
@@ -34,7 +34,7 @@
           "consolidation/robo" : "*",
           "phpstan/phpstan" : "*",
         "overtrue/phplint": "^1.1"
-      },  
+      },
     "autoload" : {
       "psr-4" : {
         "Borgogelli\\" : "src/Borgogelli/"
